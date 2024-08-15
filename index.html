@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confab</title>
+    <link rel="icon" href="./media/icon.png" type="image/png">
+
+    <script defer src = 'http://localhost:9090/socket.io/socket.io.js'></script>
+    <script defer src = './js/client.js'></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <nav>
+        <img class = 'logo' src='./media/logo.png' alt='logo'>
+        <h1>confab</h1>
+    </nav>
+
+    <div class="container">
+        <div class="msg left"><b>daju:</b> thanks for using Confab.</div>
+    </div>
+
+    <div class="send">
+        <form actionn = "#" id = "send-container">
+            <textarea name = "msgInput" id="msgInput" placeholder="type here..."></textarea>
+            <button class="btn" type = 'Submit'></button>
+        </form>
+    </div>
+</body>
+</html>
