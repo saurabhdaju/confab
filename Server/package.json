@@ -4,9 +4,10 @@
   "description": "This is a node server for the webapp",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "saurabhpandey",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
