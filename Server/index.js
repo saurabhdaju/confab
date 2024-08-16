@@ -1,6 +1,13 @@
 // Node Server to handle socket i/o connections
 
-const io = require('socket.io')(9090, {cors: {origin: "*"}});
+const express = require('express');
+const path = require('path');
+const app = express();
+const server = require('http').createServer(app);
+const io = require('socket.io')(server, { cors: { origin: "*" } });
+// const io = require('socket.io')(9090, {cors: {origin: "*"}});
+
+app.use(express.static(path.join(__dirname, '..')));
 
 const users = {};
 
@@ -20,4 +27,9 @@ io.on('connection', socket => {
         socket.broadcast.emit('user-leave', users[socket.id]);
         delete users[socket.id];
     })
+});
+
+const PORT = process.env.PORT || 9090;
+server.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
