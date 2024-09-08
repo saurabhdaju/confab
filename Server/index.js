@@ -8,6 +8,10 @@ const io = require('socket.io')(server, { cors: { origin: "*" } });
 
 app.use(express.static(path.join(__dirname, '..')));
 
+app.get('/health', (req, res) => {
+    res.status(200).send('Server is healthy');
+});
+
 const users = {};
 
 io.on('connection', socket => {
